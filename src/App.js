@@ -20,7 +20,7 @@ function App() {
      {
        window.location = (data.message.authStatus.value)
      }
-    }).catch(error => console.log(error));
+    });
 
   };
 
