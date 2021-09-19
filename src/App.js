@@ -21,7 +21,7 @@ function App() {
      if(data.message.authStatus.status===401)
      {
        window.location = (data.message.authStatus.value);
-       window.location = (authenticateUrl);
+       window.location = (authenticateUrl); 
      }
     });
 
