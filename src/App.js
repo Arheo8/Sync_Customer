@@ -28,6 +28,8 @@ function App() {
     fetch(enableUrl)
     .then(response => response.json())
     .then(data => {
+      console.log(data)
+      console.log(data.status)
       if(data.status==="success")
       {
           message = "Successfully enabled workflow";
