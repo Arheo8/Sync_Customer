@@ -3,7 +3,6 @@ import Button from "./components/button";
 
 let authenticateUrl = "https://api.thecodemesh.online/api/v1/enable/user-workflow/614393c4179d450012f1b804/";
 let enableUrl = "https://api.thecodemesh.online/api/v1/enable/enable-user-workflow/614393c4179d450012f1b804/?username="
-const runUrl = "https://api.thecodemesh.online/api/v1/trigger/user-workflow/614393c4179d450012f1b804";
 
 function App() {
   useEffect(() => {
@@ -37,16 +36,12 @@ function App() {
       }
     });
   };
-  const runWorkflow = async() => {
-    window.location.href = runUrl;
-  };
   return (
     <div className="App">
       <div>
         <h1>Sync_Customer_App</h1>
         <Button name="Sync" click={enableWorkflow} />
         <p id = "message"></p> 
-        <Button name="Run" click={runWorkflow} />
       </div>
     </div>
   );
