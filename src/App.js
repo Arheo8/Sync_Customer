@@ -6,7 +6,7 @@ const enableUrl = "https://api.thecodemesh.online/api/v1/enable/enable-user-work
 
 function App() {
 
-  let verify = false;
+  let message = "";
   
   useEffect(() => {
     console.log(window.location.search)
@@ -22,7 +22,7 @@ function App() {
        }
        else 
        {
-          verify = true;
+          message = "App Authorization Sucessfull."
        }
       });
   
@@ -43,14 +43,7 @@ function App() {
     <div className="App">
       <div>
         <h1>Sync_Customer_App</h1>
-        if(verify==true)
-        {
-            <h2>App authorized successfully</h2>
-        }
-        else
-        {
-          <h2>App not authorized</h2>
-        }
+        <h2>{message}</h2>
         <Button name="Sync" click={enableWorkflow} />      
       </div>
     </div>
