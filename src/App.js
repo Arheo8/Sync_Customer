@@ -34,13 +34,12 @@ function App() {
       }
     });
   };
-
+  console.log(window.location.search)
   return (
     <div className="App">
       <div>
         <h1>Sync_Customer_App</h1>
-        <Button name="Sync" click={enableWorkflow} />  
-        console.log(window.location.search)
+        <Button name="Sync" click={enableWorkflow} />
         <p id = "message"></p>      
       </div>
     </div>
