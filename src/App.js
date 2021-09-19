@@ -23,12 +23,15 @@ function App() {
     });
 
   };
-
+  let message = "";
   const enableWorkflow = async () => {
     fetch(enableUrl)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
+      if(data.status==="success")
+      {
+          message = "Successfully enabled workflow";
+      }
     });
   };
 
@@ -36,7 +39,8 @@ function App() {
     <div className="App">
       <div>
         <h1>Sync_Customer_App</h1>
-        <Button name="Sync" click={enableWorkflow} />        
+        <Button name="Sync" click={enableWorkflow} />  
+        <h2>{message}</h2>      
       </div>
     </div>
   );
