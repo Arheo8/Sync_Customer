@@ -32,6 +32,7 @@ function App() {
       console.log(data.status)
       if(data.status==="success")
       {
+        console.log("hi")
           message = "Successfully enabled workflow";
       }
     });
