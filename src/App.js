@@ -10,7 +10,10 @@ function App() {
     authenticateUrl += window.location.search;
     authenticate();
   }, []);
- 
+  
+
+  let verify = false;
+
   const authenticate = async () => {
     fetch(authenticateUrl)
     .then(response => response.json())
@@ -19,6 +22,10 @@ function App() {
      if(data.message.authStatus.status===401)
      {
        window.location = (data.message.authStatus.value)
+     }
+     else 
+     {
+        verify = true;
      }
     });
 
@@ -36,7 +43,15 @@ function App() {
     <div className="App">
       <div>
         <h1>Sync_Customer_App</h1>
-        <Button name="Sync" click={enableWorkflow} />        
+        if(verify==true)
+        {
+            <h2>App authorized successfully</h2>
+        }
+        else
+        {
+          <h2>App not authorized</h2>
+        }
+        <Button name="Sync" click={enableWorkflow} />      
       </div>
     </div>
   );
