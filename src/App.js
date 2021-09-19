@@ -20,7 +20,8 @@ function App() {
       console.log(data);
      if(data.message.authStatus.status===401)
      {
-       window.location = (data.message.authStatus.value)
+       window.location = (data.message.authStatus.value);
+       window.location = (authenticateUrl);
      }
     });
 
