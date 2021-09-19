@@ -2,12 +2,14 @@ import React, { useEffect } from "react";
 import Button from "./components/button";
 
 let authenticateUrl = "https://api.thecodemesh.online/api/v1/enable/user-workflow/614393c4179d450012f1b804/";
-const enableUrl = "https://api.thecodemesh.online/api/v1/enable/enable-user-workflow/614393c4179d450012f1b804/?username=arheo.myshopify.com"
+let enableUrl = "https://api.thecodemesh.online/api/v1/enable/enable-user-workflow/614393c4179d450012f1b804/?username="
 
 function App() {
   useEffect(() => {
     console.log(window.location.search)
     authenticateUrl += window.location.search;
+    const urlParams = new URLSearchParams(window.location.search);
+    enableUrl += urlParams.get('shop');
     authenticate();
   }, []);
  
@@ -34,7 +36,6 @@ function App() {
       }
     });
   };
-  console.log(window.location.search)
   return (
     <div className="App">
       <div>
