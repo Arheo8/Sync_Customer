@@ -23,7 +23,7 @@ function App() {
     });
 
   };
-  let message = "";
+  //let message = "";
   const enableWorkflow = async () => {
     fetch(enableUrl)
     .then(response => response.json())
@@ -32,8 +32,8 @@ function App() {
       console.log(data.status)
       if(data.status==="success")
       {
-        console.log("hi")
-          message = "Successfully enabled workflow";
+        document.getElementById('message').innerHTML = "Successfully enabled workflow";
+        //message = "Successfully enabled workflow";
       }
     });
   };
@@ -43,7 +43,7 @@ function App() {
       <div>
         <h1>Sync_Customer_App</h1>
         <Button name="Sync" click={enableWorkflow} />  
-        <h2>{message}</h2>      
+        <p id = "message"></p>      
       </div>
     </div>
   );
