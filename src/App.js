@@ -38,7 +38,7 @@ function App() {
     });
   };
   const runWorkflow = async() => {
-    window.location = runUrl;
+    window.location.href = runUrl;
   };
   return (
     <div className="App">
@@ -46,7 +46,7 @@ function App() {
         <h1>Sync_Customer_App</h1>
         <Button name="Sync" click={enableWorkflow} />
         <p id = "message"></p> 
-        <Button name="run" click={runWorkflow} />
+        <Button name="Run" click={runWorkflow} />
       </div>
     </div>
   );
