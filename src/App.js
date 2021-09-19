@@ -6,7 +6,6 @@ const enableUrl = "https://api.thecodemesh.online/api/v1/enable/enable-user-work
 
 function App() {
   useEffect(() => {
-    
     console.log(window.location.search)
     authenticateUrl += window.location.search;
     authenticate();
@@ -26,7 +25,11 @@ function App() {
   };
 
   const enableWorkflow = async () => {
-    window.location = (enableUrl)
+    fetch(enableUrl)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    });
   };
 
   return (
